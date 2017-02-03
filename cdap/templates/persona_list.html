@@ -1,1 +1,40 @@
 {% extends 'base.html'%}
+{% block content %}
+<h3>Listado de empleados</h3>
+{% if personas %}
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>#</th>
+    <th>Nombre</th>
+    <th>Documento</th>
+    <th>Empresa</th>
+    <th>Alta</th>
+    <th>activo</th>
+    <th>acciones</th>
+  </tr>
+</thead>
+<tbody>
+  {% for persona in personas %}
+  <tr>
+    <td>{{persona.id}}</td>
+    <td>{{ persona.nombre }}</td>
+    <td>{{ persona.documento }}</td>
+    <td>{{ persona.empresa }}</td>
+    <td>{{ persona.alta }}</td>
+    <td>{{ persona.activo }}</td>
+    <td>
+      <i class="icon-edit">editar</i>
+      <i class="icon-eraser">eliminar</i>
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+</div>
+{% else %}
+<p>No hay ningun empleado listado.</p>
+{% endif %}
+
+{% endblock %}
