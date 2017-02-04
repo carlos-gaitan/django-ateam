@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}Empleados{% endblock %}
+{% block content %}
+<h3>Album de empleados</h3>
+{% if personas %}
+<div class="album text-muted">
+      <div class="container">
+        <div class="row">
+          {% for persona in personas %}
+          <div class="card">
+            <img src="{{ persona.foto.url }}" alt="Card image cap">
+            <p class="card-text">{{ persona.nombre }}</p>
+            <p class="card-text">{{ persona.documento }}</p>
+            <p class="card-text">{{ persona.foto }}</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+</div>
+
+{% else %}
+<p>No hay ningun empleado listado.</p>
+{% endif %}
+
+{% endblock %}
