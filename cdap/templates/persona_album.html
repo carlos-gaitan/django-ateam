@@ -9,10 +9,10 @@
         <div class="row">
           {% for persona in personas %}
           <div class="card">
-            <img src="{{ persona.foto.url }}" alt="Card image cap">
+            <img src="{% url 'media-dl' persona.foto %}" alt="Card image cap">
+            <p class="card-text">{{ persona.empresa }}</p>
             <p class="card-text">{{ persona.nombre }}</p>
             <p class="card-text">{{ persona.documento }}</p>
-            <p class="card-text">{{ persona.foto }}</p>
           </div>
           {% endfor %}
         </div>
@@ -22,5 +22,4 @@
 {% else %}
 <p>No hay ningun empleado listado.</p>
 {% endif %}
-
 {% endblock %}
