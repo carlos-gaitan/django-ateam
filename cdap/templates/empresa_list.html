@@ -1,0 +1,45 @@
+{% extends 'base.html'%}
+{% block title %}Empresas{% endblock %}
+{% block content %}
+<h3>Listado de empresas</h3>
+{% if empresas %}
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>#</th>
+    <th>Nombre</th>
+    <th>Direccion</th>
+    <th>Telefono</th>
+    <th>Responsable</th>
+    <th>Correo</th>
+    <th>Fecha de alta</th>
+    <th>Locacion</th>
+    <th>Acciones</th>
+  </tr>
+</thead>
+<tbody>
+  {% for empresa in empresas %}
+  <tr>
+    <td>{{persona.id}}</td>
+    <td>{{ empresa.nombre }}</td>
+    <td>{{ empresa.direccion }}</td>
+    <td>{{ empresa.telefono }}</td>
+    <td>{{ empresa.responsable }}</td>
+    <td>{{ empresa.email }}</td>
+    <td>{{ empresa.fecha_alta }}</td>
+    <td>{{ empresa.locaion }}</td>
+    <td>
+      <i class="icon-edit">editar</i>
+      <i class="icon-eraser">eliminar</i>
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+</div>
+{% else %}
+<p>No hay ninguna empresa listada.</p>
+{% endif %}
+
+{% endblock %}

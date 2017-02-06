@@ -37,7 +37,7 @@ body {
   width: 33.333%;
   padding: .75rem;
   margin-bottom: 2rem;
-  border: 0;
+  border: 1;
 }
 
 .card > img {
@@ -55,4 +55,9 @@ footer {
 
 footer p {
   margin-bottom: .25rem;
+}
+
+#foto4x4 {
+  width: 113px;
+  height: 113px;
 }

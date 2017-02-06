@@ -9,7 +9,7 @@
         <div class="row">
           {% for persona in personas %}
           <div class="card">
-            <img src="{% url 'media-dl' persona.foto %}" alt="Card image cap">
+            <img id="foto4x4" src="{% url 'media-dl' persona.foto %}" alt="Card image cap">
             <p class="card-text">{{ persona.empresa }}</p>
             <p class="card-text">{{ persona.nombre }}</p>
             <p class="card-text">{{ persona.documento }}</p>

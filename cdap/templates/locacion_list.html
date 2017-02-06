@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block title %}Locaciones{% endblock %}
+{% block content %}
+<h3>Listado de locaciones</h3>
+{% if locaciones %}
+<div class="table-responsive">
+<table class="table table-striped">
+<thead>
+  <tr>
+    <th>#</th>
+    <th>Nombre</th>
+    <th>Comentario</th>
+    <th>Activo</th>
+    <th>Acciones</th>
+  </tr>
+</thead>
+<tbody>
+  {% for locacion in locaciones %}
+  <tr>
+    <td>{{ locacion.id }}</td>
+    <td>{{ locacion.nombre }}</td>
+    <td>{{ locacion.comentario }}</td>
+    <td>{{ locacion.activo }}</td>
+    <td>
+      <i class="icon-edit">editar</i>
+      <i class="icon-eraser">eliminar</i>
+    </td>
+  </tr>
+  {% endfor %}
+</tbody>
+</table>
+</div>
+{% else %}
+<p>No hay ninguna locacion listada.</p>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html'%}
+{% block title %}Empresas{% endblock %}
+{% block content %}
+<h3>Formulario para personas</h3>
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Guardar</button>
+</form>
+{% endblock %}
