@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
-{% block title %}Empleados{% endblock %}
+{% block title %}Empresas{% endblock %}
 {% block content %}
-<h3>Formulario para empleados</h3>
+<h3>Formulario para Empresas</h3>
 <form enctype="multipart/form-data" method="post">
     {% csrf_token %}
     {{ form.as_p }}
