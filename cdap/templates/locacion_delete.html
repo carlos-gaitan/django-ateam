@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Locacion{% endblock %}
+{% block content %}
+<div class="page-header">
+  <h2>Eliminar Locacion</h2>
+</div>
+<form enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <h5>Desea eliminar el registro de la sucursal {{ locacion.nombre }}</h5>
+    <p>...</p>
+    <button class="btn btn-danger btn-sm" type="submit">Si, eliminar</button>
+    <a class="btn btn-default btn-sm" href="{% url 'locacion_listar'%}">Cancelar</a>
+</form>
+{% endblock %}

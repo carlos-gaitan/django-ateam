@@ -30,8 +30,9 @@
     <td>{{ empresa.fecha_alta }}</td>
     <td>{{ empresa.locaion }}</td>
     <td>
-      <i class="icon-edit"> | </i>
-      <i class="icon-eraser"></i>
+      <a href="{% url 'empresa_editar' empresa.id %}"><i class="icon-edit"></i></a>  |
+      <a href="{% url 'empresa_eliminar' empresa.id %}"><i class="icon-eraser"></i></a> |
+      <a href="{% url 'empresa_nuevo' %}"><i class="icon-plus"></i></a>
     </td>
   </tr>
   {% endfor %}

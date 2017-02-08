@@ -26,8 +26,10 @@
     <td>{{ persona.fecha_alta }}</td>
     <td>{{ persona.activo }}</td>
     <td>
-      <i class="icon-edit"> | </i>
-      <i class="icon-eraser"></i>
+      <a href="{% url 'persona_editar' persona.id %}"><i class="icon-edit"></i></a>  |
+      <a href="{% url 'persona_eliminar' persona.id %}"><i class="icon-eraser"></i></a> |
+      <a href="{% url 'persona_nuevo' %}"><i class="icon-plus"></i></a>
+
     </td>
   </tr>
   {% endfor %}

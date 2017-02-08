@@ -10,7 +10,7 @@ def index(request):
     return render(request, 'index.html')
 
 # funciones para persona
-## listado
+##
 def persona_list(request):
     persona = Persona.objects.all()
     contexto = {'personas':persona}
@@ -32,8 +32,6 @@ def persona_edit(request, id_persona):
         return redirect('persona_listar')
     return render(request, 'persona_form.html', {'form':form})
 
-
-## formulario para agregar una persona
 def persona_add(request):
     if request.method == 'POST':
         form = PersonaForm(request.POST, request.FILES)
@@ -44,8 +42,16 @@ def persona_add(request):
         form = PersonaForm()
     return render (request, 'persona_form.html', {'form':form})
 
+def persona_delete(request, id_persona):
+    persona = Persona.objects.get(id=id_persona)
+    if request.method == 'POST':
+        persona.delete()
+        return redirect('persona_listar')
+    return render(request, 'persona_delete.html', {'persona':persona})
+
 
 # funciones para empresa
+##
 def empresa_list(request):
     empresa = Empresa.objects.all()
     contexto = {'empresas':empresa}
@@ -72,9 +78,15 @@ def empresa_edit(request, id_empresa):
         return redirect('empresa_listar')
     return render(request, 'empresa_form.html', {'form':form})
 
-
+def empresa_delete(request, id_empresa):
+    empresa = Empresa.objects.get(id=id_empresa)
+    if request.method == 'POST':
+        empresa.delete()
+        return redirect('empresa_listar')
+    return render(request, 'empresa_delete.html', {'empresa':empresa})
 
 # funciones para locacion
+##
 def locacion_list(request):
     locacion = Locacion.objects.all()
     contexto = {'locaciones':locacion}
@@ -100,3 +112,10 @@ def locacion_edit(request, id_locacion):
             form.save()
         return redirect('locacion_listar')
     return render(request, 'locacion_form.html', {'form':form})
+
+def locacion_delete(request, id_locacion):
+    locacion = Locacion.objects.get(id=id_locacion)
+    if request.method == 'POST':
+        locacion.delete()
+        return redirect('locacion_listar')
+    return render(request, 'locacion_delete.html', {'locacion':locacion})

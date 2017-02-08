@@ -22,8 +22,9 @@
     <td>{{ locacion.comentario }}</td>
     <td>{{ locacion.activo }}</td>
     <td>
-      <i class="icon-edit"> | </i>
-      <i class="icon-eraser"></i>
+      <a href="{% url 'locacion_editar' locacion.id %}"><i class="icon-edit"></i></a>  |
+      <a href="{% url 'locacion_eliminar' locacion.id %}"><i class="icon-eraser"></i></a> |
+      <a href="{% url 'locacion_nuevo' %}"><i class="icon-plus"></i></a>
     </td>
   </tr>
   {% endfor %}
