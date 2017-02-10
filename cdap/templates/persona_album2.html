@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block title %}Empleados{% endblock %}
+{% block content %}
+<h3>Album de empleados</h3>
+{% if personas %}
+{% for empresa in empresas %}
+<h5>Empresa {{ empresa }}</h5>
+<div class="album text-muted">
+      <div class="container">
+        <div class="row">
+          {% for persona in personas %}
+            {% if persona.empresa.id == empresa.id %}
+              <div class="card">
+                <img id="foto4x4" src="{% url 'media-dl' persona.foto %}" alt="Card image cap">
+                <p class="card-text">{{ persona.empresa }}</p>
+                <p class="card-text">{{ persona.nombre }}</p>
+                <p class="card-text">{{ persona.documento }}</p>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+</div>
+{% endfor %}
+{% else %}
+<p>No hay ningun empleado listado.</p>
+{% endif %}
+{% endblock %}

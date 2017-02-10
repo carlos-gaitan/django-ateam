@@ -21,6 +21,12 @@ def persona_album(request):
     contexto = {'personas':persona}
     return render(request, 'persona_album.html', contexto)
 
+def persona_album2(request):
+    persona = Persona.objects.all()
+    empresa = Empresa.objects.all()
+    contexto = {'personas':persona, 'empresas':empresa}
+    return render(request, 'persona_album2.html', contexto)
+
 def persona_edit(request, id_persona):
     persona = Persona.objects.get(id=id_persona)
     if request.method == 'GET':

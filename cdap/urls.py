@@ -10,6 +10,8 @@ urlpatterns = [
     url(r'^persona_nuevo$', views.persona_add, name='persona_nuevo'),
     url(r'^persona_editar/(?P<id_persona>\d+)/$', views.persona_edit, name='persona_editar'),
     url(r'^persona_eliminar/(?P<id_persona>\d+)/$', views.persona_delete, name='persona_eliminar'),
+
+    url(r'^persona_album2$', views.persona_album2, name='persona_album2'),
 # empresa
     url(r'^empresa_listar$', views.empresa_list, name='empresa_listar'),
     url(r'^empresa_nuevo$', views.empresa_add, name='empresa_nuevo'),
