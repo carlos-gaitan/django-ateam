@@ -2,6 +2,17 @@
 {% load static %}
 {% block title %}Empleados{% endblock %}
 {% block content %}
+
+<h3>Seleccionar empresa a visualizar</h3>
+{% if empresas %}
+  {% for empresa in empresas %}
+  <div>
+    <input id="{{ empresa.nombre}}" type="checkbox" />
+    <label for="{{ empresa.nombre }}">{{ empresa.nombre }}</label>
+  </div>
+  {% endfor %}
+{% endif %}
+
 <h3>Album de empleados</h3>
 {% if personas %}
 {% for empresa in empresas %}
